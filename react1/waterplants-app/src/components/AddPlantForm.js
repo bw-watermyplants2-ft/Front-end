@@ -10,10 +10,6 @@ const AddPlantForm = ({errors, touched}) => {
     return(
         <div className='addplantform'>
             <Form>
-                <Field name = 'id' type = 'text' placeholder = 'Enter An ID#' />
-                {touched.id && errors.id && (
-                    <p>{errors.id}</p>
-                )}
                 <Field name = 'nickname' type = 'text' placeholder= 'Enter A Nickname' />
                 {touched.nickname && errors.nickname && (
                     <p>{errors.nickname}</p>
@@ -38,7 +34,6 @@ const AddPlantForm = ({errors, touched}) => {
 const FormikAddPlantForm = withFormik({
     mapPropsToValues(props) {
         return {
-            id: props.id || "",
             nickname: props.nickname || "",
             species: props.species || "",
             h2ofrequency: props.h2ofrequency || ""
@@ -46,7 +41,6 @@ const FormikAddPlantForm = withFormik({
     },
 
     validationSchema: Yup.object().shape({
-        id: Yup.string().required("ID is required"),
         nickname: Yup.string().required("Nickname is required."),
         species: Yup.string().required("Species is required."),
         h2ofrequency: Yup.string().required("Watering frequency is required.")
