@@ -10,7 +10,7 @@ const LoginForm = ({errors, touched}) => {
     return(
         <div className='Loginform'>
             <Form>
-                <Field name = 'username' type = 'text' placeholder= 'Enter Username or Phone Number' />
+                <Field name = 'username' type = 'text' placeholder= 'Username or Phone' />
                 {touched.username && errors.username && (
                     <p>{errors.username}</p>
                 )}
