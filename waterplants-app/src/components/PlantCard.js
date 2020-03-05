@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import axios from 'axios';
 
 const PlantCard = (props) => {
+
   return (
     <div>
       <Card>

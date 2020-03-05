@@ -29,7 +29,10 @@ const Header = (props) => {
           <NavLink href="#">View My Plants</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink disabled href="#"></NavLink>
+          <NavLink href="/deleteplant/">Delete a Plant</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/editplant/">Edit a Plant</NavLink>
         </NavItem>
       </Nav>
     </div>
