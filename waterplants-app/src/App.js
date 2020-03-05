@@ -6,6 +6,8 @@ import LoginForm from './components/LoginForm';
 import {Route} from 'react-router-dom';
 import WelcomePage from './components/WelcomePage';
 import AddPlantForm from './components/AddPlantForm';
+import DeletePlantForm from './components/DeletePlantForm';
+import EditPlantForm from './components/EditPlantForm';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Route path='/register/' component={RegisterForm}/>
       <Route path='/login/' component={LoginForm} />
       <Route path='/addplant/' component={AddPlantForm}/>
+      <Route path='/deleteplant/' component={DeletePlantForm}/>
+      <Route path='/editplant/' component={EditPlantForm}/>
     </div>
   );
 }

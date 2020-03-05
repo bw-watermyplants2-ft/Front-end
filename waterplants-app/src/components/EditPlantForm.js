@@ -4,11 +4,15 @@ import axios from 'axios';
 import * as Yup from 'yup';
 
 
-const AddPlantForm = ({errors, touched}) => {
+const EditPlantForm = ({errors, touched}) => {
 
     return(
-        <div className='addplantform'>
+        <div>
             <Form>
+                <Field name = 'id' type = 'text' placeholder = 'Enter The Plants ID#' />
+                {touched.id && errors.id && (
+                    <p>{errors.id}</p>
+                )}
                 <Field name = 'nickname' type = 'text' placeholder= 'Enter A Nickname' />
                 {touched.nickname && errors.nickname && (
                     <p>{errors.nickname}</p>
@@ -30,9 +34,10 @@ const AddPlantForm = ({errors, touched}) => {
 
 }
 
-const FormikAddPlantForm = withFormik({
+const FormikEditPlantForm = withFormik({
     mapPropsToValues(props) {
         return {
+            id: props.id || "",
             nickname: props.nickname || "",
             species: props.species || "",
             h2ofrequency: props.h2ofrequency || ""
@@ -40,6 +45,7 @@ const FormikAddPlantForm = withFormik({
     },
 
     validationSchema: Yup.object().shape({
+        id: Yup.string().required("ID is Required"),
         nickname: Yup.string().required("Nickname is required."),
         species: Yup.string().required("Species is required."),
         h2ofrequency: Yup.string().required("Watering frequency is required.")
@@ -57,5 +63,5 @@ const FormikAddPlantForm = withFormik({
     }
 
     
-})(AddPlantForm);
-export default FormikAddPlantForm;
+})(EditPlantForm);
+export default FormikEditPlantForm;
