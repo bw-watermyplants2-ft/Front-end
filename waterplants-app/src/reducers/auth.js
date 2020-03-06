@@ -10,7 +10,7 @@ const initalState = {
 
 export const authReducer = (state = initalState, action) => {
 
-  switch (action.type) {
+  switch (action.species) {
     case LOGIN_REQUEST:
       return {
         ...state,

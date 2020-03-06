@@ -10,7 +10,7 @@ const ID = localStorage.getItem("userID");
 export const getPlants = () => dispatch => {
   dispatch({ type: FETCH_PLANTS_REQUEST });
 
-  API().get(`/dashboard/${ID}`)
+  API().get(`/user/${ID}`)
     .then(response => {
       console.log(response.data)
       dispatch({
@@ -33,7 +33,7 @@ export const FETCH_PLANT_FAILURE = "FETCH_PLANT_FAILURE";
 export const getPlant = (props) => dispatch => {
   dispatch({ type: FETCH_PLANT_REQUEST });
 
-  API().get(`/dashboard/${ID}/my_plant/${props.match.params}`)
+  API().get(`/user/${ID}/my_plant/${props.match.params}`)
     .then(response =>
       dispatch({
         type: FETCH_PLANT_SUCCESS,
@@ -55,7 +55,7 @@ export const CREATE_PLANT_FAILURE = "CREATE_PLANT_FAILURE";
 export const createPlant = plant => dispatch => {
   dispatch({ type: CREATE_PLANT_REQUEST });
   console.log(plant)
-  API().post(`/dashboard/${ID}/plants/add`, {"name": plant.name, "location": plant.location, "type": plant.type, 'id':plant.id})
+  API().post(`/user/${ID}/plants/add`, {"name": plant.nickname, "h2O_freq": plant.h2O_freq, "type": plant.species, 'id':plant.id})
     .then(response => {
       dispatch({ type: CREATE_PLANT_SUCCESS, payload: response.data });
       dispatch(push(`/plant/${response.data.id}/water`));
@@ -75,7 +75,7 @@ export const UPDATE_PLANT_FAILURE = "UPDATE_PLANT_FAILURE";
 export const updatePlant = (plant) => dispatch => {
   dispatch({ type: UPDATE_PLANT_REQUEST });
   console.log(plant)
-  API().put(`/dashboard/${ID}/my_plant/${plant.id}/update`, {"name": plant.name, "location": plant.location, "type": plant.type})
+  API().put(`/user/${ID}/my_plant/${plant.id}/update`, {"name": plant.nickname, "h2O_freq": plant.h2O_freq, "species": plant.species})
     .then(response => {
       dispatch({ type: UPDATE_PLANT_SUCCESS, payload: response.data });
       dispatch(push('/'));
@@ -95,7 +95,7 @@ export const DELETE_PLANT_FAILURE = "DELETE_PLANT_FAILURE";
 export const deletePlant = (plant) => dispatch => {
   dispatch({ type: DELETE_PLANT_REQUEST });
   console.log(plant.id)
-  API().delete(`/dashboard/${ID}/my_plant/${plant.id}/remove`)
+  API().delete(`/user/${ID}/my_plant/${plant.id}/remove`)
     .then(response => {
       dispatch({ type: DELETE_PLANT_SUCCESS });
       dispatch(push("/"));
@@ -115,7 +115,7 @@ export const CREATE_PLANT_SCHEDULE_FAILURE = "CREATE_PLANT_SCHEDULE_FAILURE";
 export const createPlantSchedule = (props) => dispatch => {
   dispatch({ type: CREATE_PLANT_SCHEDULE_REQUEST });
   console.log(props)
-  API().post(`/dashboard/${ID}/my_plant/${props.plant_id}/add_schedule`, {'water_schedule': props.water_schedule})
+  API().post(`/user/${ID}/my_plant/${props.plant_id}/add_schedule`, {'water_schedule': props.water_schedule})
     .then(response => {
       dispatch({ type: CREATE_PLANT_SCHEDULE_SUCCESS, payload: response.data });
       dispatch(push('/'));
@@ -136,7 +136,7 @@ const PlantID = localStorage.getItem("plantID");
 export const getPlantSchedule = (props) => dispatch => {
   dispatch({ type: FETCH_PLANT_SCHEDULE_REQUEST });
   console.log(props)
-  API().get(`/dashboard/${ID}/my_plant/${props}/schedules`)
+  API().get(`/user/${ID}/my_plant/${props}/schedules`)
   .then(response =>
     dispatch({
       type: FETCH_PLANT_SCHEDULE_SUCCESS,
@@ -159,7 +159,7 @@ export const UPDATE_PLANT_SCHEDULE_FAILURE = "UPDATE_PLANT_SCHEDULE_FAILURE";
 export const updatePlantSchedule = (schedule, props) => dispatch => {
   dispatch({ type: UPDATE_PLANT_SCHEDULE_REQUEST });
 
-  API().put(`/dashboard/${ID}/my_plant/${PlantID}/update/${props.waterID}`, schedule)
+  API().put(`/user/${ID}/my_plant/${PlantID}/update/${props.waterID}`, schedule)
     .then(response => {
       dispatch({ type: UPDATE_PLANT_SCHEDULE_SUCCESS, payload: response.data });
       dispatch(push('/'));

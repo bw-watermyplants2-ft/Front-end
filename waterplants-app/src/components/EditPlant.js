@@ -70,14 +70,14 @@ const EditPlant = props => {
 
   const [plant, setPlant] = useState({
     id: props.match.params.id,
-    name: "",
-    location: "",
-    type: "",
+    nickname: "",
+    h2O_freq: "",
+    species: "",
   });
 
   const handlerChange = event => {
     event.preventDefault();
-    setPlant({ ...plant, [event.target.name]: event.target.value });
+    setPlant({ ...plant, [event.target.nickname]: event.target.value });
   };
   const submitHandler = event => {
     event.preventDefault();
@@ -114,11 +114,11 @@ const EditPlant = props => {
             margin="normal"
             required="true"
             fullWidth
-            name="name"
-            value={plant.name}
+            name="nickname"
+            value={plant.nickname}
             label="Plant Name"
             type="text"
-            id="plantName"
+            id="nickname"
             onChange={handlerChange}
           />
 
@@ -127,11 +127,11 @@ const EditPlant = props => {
             margin="normal"
             required="true"
             fullWidth
-            name="type"
-            value={plant.type}
-            label="Plant Type"
+            name="species"
+            value={plant.species}
+            label="Plant Species"
             type="text"
-            id="plantName"
+            id="species"
             onChange={handlerChange}
           />
 
@@ -140,11 +140,11 @@ const EditPlant = props => {
             margin="normal"
             required="true"
             fullWidth
-            name="location"
-            value={plant.location}
-            label="Plant Location"
+            name="h2O_freq"
+            value={plant.h2O_freq}
+            label="Plant H2O Frequency"
             type="text"
-            id="plantLocation"
+            id="h2O_freq"
             onChange={handlerChange}
           />
 

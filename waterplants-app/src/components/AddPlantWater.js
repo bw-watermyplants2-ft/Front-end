@@ -135,7 +135,7 @@ const AddPlantWater = props => {
             margin="normal"
             required="true"
             fullWidth
-            id="h20Frequency"
+            id="h20_freq"
             label="h20Frequency"
             value={selectedDate}
             onChange={handleDateChange}

@@ -7,7 +7,7 @@ const initialState = {
   currentPlant: {
     id: undefined,
     name: "",
-    location: "",
+    h2O_freq: "",
     type: "",
     // can we put an object in here?
     water_schedule: '',
@@ -19,7 +19,7 @@ const initialState = {
 };
 
 export const plantReducer = (state = initialState, action) => {
-  switch (action.type) {
+  switch (action.species) {
     case actions.FETCH_PLANTS_REQUEST:
       return {
         ...state,
@@ -50,9 +50,9 @@ export const plantReducer = (state = initialState, action) => {
         isFetchingPlant: false,
         currentPlant: {
           id: action.payload.id,
-          name: action.payload.name,
-          location: action.payload.location,
-          type: action.payload.type,
+          nickname: action.payload.nickname,
+          h2O_freq: action.payload.h2O_freq,
+          species: action.payload.species,
         }
       };
 
@@ -96,7 +96,7 @@ export const plantReducer = (state = initialState, action) => {
 };
 
 export const plantScheduleReducer = (state = initialState, action) => {
-  switch (action.type) {
+  switch (action.species) {
     case actions.FETCH_PLANT_SCHEDULE_REQUEST:
       return { ...state, isFetchingPlant: true };
 

@@ -178,7 +178,7 @@ Remember that this project is licensed under the MIT license, and by submitting 
 #### Pull Request Guidelines
 
 - Ensure any install or build dependencies are removed before the end of the layer when doing a build.
-- Update the README.md with details of changes to the interface, including new plist variables, exposed ports, useful file locations and container parameters.
+- Update the README.md with details of changes to the interface, including new plist variables, exposed ports, useful file h2O_freqs and container parameters.
 - Ensure that your code conforms to our existing code conventions and test coverage.
 - Include the relevant issue number, if applicable.
 - You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.

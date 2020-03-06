@@ -1,7 +1,7 @@
 // import * as actions from "../actions";
 //
 // export const uiReducer = (state = {}, action) => {
-//   switch (action.type) {
+//   switch (action.species) {
 //     case "SNACKBAR_SUCCESS":
 //       return {
 //         ...state,

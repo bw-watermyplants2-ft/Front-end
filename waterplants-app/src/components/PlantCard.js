@@ -52,7 +52,7 @@ function PlantCard(props) {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-            {props.plant.name}
+            {props.plant.nickname}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
          <AccessTimeIcon color="primary" fontSize="small" /> {Moment(dt).format('hh:mm')}

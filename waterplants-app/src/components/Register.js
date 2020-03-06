@@ -62,7 +62,7 @@ const Register = props => {
   const [user, setUser] = useState({
     username: "",
     password: "",
-    phone: "",
+    phonenumber: "",
   });
 
 
@@ -72,7 +72,7 @@ const Register = props => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
   const handlePhoneChange = value => {
-    setUser({ ...user, phone:value })
+    setUser({ ...user, phonenumber:value })
     console.log('phone change', user);
   }
 
@@ -110,10 +110,10 @@ const Register = props => {
             margin="normal"
             required="true"
             fullWidth
-            name="phone"
-            label="Phone"
-            type="phone"
-            value={props.phone}
+            name="phonenumber"
+            label="Phonenumber"
+            type="phonenumber"
+            value={props.phonenumber}
             id="phone"
             autoComplete="phone-password"
             onChange={handlePhoneChange}

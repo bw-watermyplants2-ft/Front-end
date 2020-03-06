@@ -6,7 +6,7 @@ export function getToken() {
 
 export default function() { 
   return axios.create({
-  baseURL: "https://watermyplants2.herokuapp.com/",
+  baseURL: "https://watermyplants2.herokuapp.com",
   headers: {
     Authorization: getToken()
   },

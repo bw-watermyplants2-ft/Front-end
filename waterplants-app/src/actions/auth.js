@@ -26,7 +26,7 @@ export function authenticateUser (userData , props) {
       localStorage.setItem("userID", response.data.id)
       localStorage.setItem("username", response.data.username)
       dispatch({type: LOGIN_SUCCESS, payload: response.data})
-      dispatch(push("/dashboard"));
+      dispatch(push("/user"));
     })
     .catch(error =>
       dispatch({
@@ -65,7 +65,7 @@ export const UPDATE_PHONE_FAILURE = "UPDATE_PHONE_FAILURE";
 export const updatePhone = (phone, props) => dispatch => {
   dispatch({ type: UPDATE_PHONE_REQUEST });
 
-  API().put(`/dashboard/${ID}/user_settings`, phone)
+  API().put(`/user/${ID}/user_settings`, phone)
     .then(response => {
       dispatch({ type: UPDATE_PHONE_SUCCESS, payload: response.data });
       dispatch(push('/'));
