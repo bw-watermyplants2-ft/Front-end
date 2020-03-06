@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import PlantCard from './PlantCard';
 
-export default function MyPlants() {
+const MyPlants = (props) => {
 
     const [plants, setPlant] = useState([]);
 
@@ -24,5 +24,7 @@ export default function MyPlants() {
                 <PlantCard key={plant.id} plant={plant} />
             ))}
         </div>
-    )
-}
+    );
+};
+
+export default MyPlants;
