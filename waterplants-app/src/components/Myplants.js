@@ -8,9 +8,10 @@ export default function MyPlants() {
 
     useEffect(() => {
         axios
-        .get("https://watermyplants2.herokuapp.com/users/:userId")
+        .get("https://watermyplants2.herokuapp.com/users/:userId/:plantId")
         .then(res => {
             console.log(res);
+            setPlant(res);
         })
         .catch(err => {
             console.log(err);
@@ -19,7 +20,9 @@ export default function MyPlants() {
 
     return (
         <div>
-            
+            {plants.map(plant =>(
+                <PlantCard key={plant.id} plant={plant} />
+            ))}
         </div>
     )
 }

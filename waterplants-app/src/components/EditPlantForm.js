@@ -54,7 +54,7 @@ const FormikEditPlantForm = withFormik({
     handleSubmit(values, {resetForm}) {
         console.log('submitting', values);
         axios
-        .post("", values)
+        .post(`https://watermyplants2.herokuapp.com/users/:userId/plants/${values.id}`, values)
         .then(res => {
             console.log("success", res);
             resetForm();
