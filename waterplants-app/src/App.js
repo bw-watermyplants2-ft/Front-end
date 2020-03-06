@@ -8,8 +8,8 @@ import WelcomePage from './components/WelcomePage';
 import AddPlantForm from './components/AddPlantForm';
 import DeletePlantForm from './components/DeletePlantForm';
 import EditPlantForm from './components/EditPlantForm';
-import MyPlants from './components/MyPlants';
 import UpdatePhonePassForm from './components/UpdatePhonePassForm';
+import MyPlants from './components/MyPlants';
 
 function App() {
 
