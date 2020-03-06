@@ -34,6 +34,9 @@ const Header = (props) => {
         <NavItem>
           <NavLink href="/editplant/">Edit a Plant</NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink href="/updatephonepass/">Edit Phone Number/Password</NavLink>
+        </NavItem>
       </Nav>
     </div>
   );

@@ -8,9 +8,12 @@ import WelcomePage from './components/WelcomePage';
 import AddPlantForm from './components/AddPlantForm';
 import DeletePlantForm from './components/DeletePlantForm';
 import EditPlantForm from './components/EditPlantForm';
+import UpdatePhonePassForm from './components/UpdatePhonePassForm';
 import MyPlants from './components/MyPlants';
 
 function App() {
+
+
   return (
     <div className="App">
       <Header/>
@@ -21,6 +24,7 @@ function App() {
       <Route path='/deleteplant/' component={DeletePlantForm}/>
       <Route path='/editplant/' component={EditPlantForm}/>
       <Route path='/myplants/' component={MyPlants}/>
+      <Route path='/updatephonepass/' component={UpdatePhonePassForm}/>
     </div>
   );
 }
