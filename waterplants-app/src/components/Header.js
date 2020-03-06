@@ -10,32 +10,28 @@ const Header = (props) => {
     <div>
       <Nav tabs>
         <NavItem>
-          <NavLink href="/" active>Home</NavLink>
+          <NavLink href="#" active>Link</NavLink>
         </NavItem>
         <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle nav caret>
-            Register/Login
+            Dropdown
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem href="/register/">Register</DropdownItem>
+            <DropdownItem header>Header</DropdownItem>
+            <DropdownItem disabled>Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
             <DropdownItem divider />
-            <DropdownItem href="/login/">Login</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
           </DropdownMenu>
         </Dropdown>
         <NavItem>
-          <NavLink href="/addplant/">Add A Plant</NavLink>
+          <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/myplants/">View My Plants</NavLink>
+          <NavLink href="#">Another Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/deleteplant/">Delete a Plant</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/editplant/">Edit a Plant</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/updatephonepass/">Edit Phone Number/Password</NavLink>
+          <NavLink disabled href="#">Disabled Link</NavLink>
         </NavItem>
       </Nav>
     </div>
