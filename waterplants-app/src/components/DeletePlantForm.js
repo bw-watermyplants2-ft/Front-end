@@ -38,7 +38,7 @@ const FormikDeletePlantForm = withFormik({
     handleSubmit(value, {resetForm}) {
         console.log('submitting', value);
         axios
-        .delete("")
+        .delete(`https://watermyplants2.herokuapp.com/users/:userId/plants/${value}`)
         .then(res => {
             console.log("success", res);
             resetForm();
