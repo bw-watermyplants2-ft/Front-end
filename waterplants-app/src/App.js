@@ -9,7 +9,7 @@ import AddPlantForm from './components/AddPlantForm';
 import DeletePlantForm from './components/DeletePlantForm';
 import EditPlantForm from './components/EditPlantForm';
 import UpdatePhonePassForm from './components/UpdatePhonePassForm';
-import MyPlants from './components/MyPlants.js';
+import MyPlants from './components/MyPlants';
 
 function App() {
 
