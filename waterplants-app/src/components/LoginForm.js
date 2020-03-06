@@ -2,7 +2,7 @@ import React from 'react';
 import {Form, withFormik, Field} from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
-
+import "./axiosAuth";
 
 const LoginForm = ({errors, touched}) => {
 
@@ -45,6 +45,8 @@ const FormikLoginForm = withFormik({
         axios
         .post("https://watermyplants2.herokuapp.com/auth/login", values)
         .then(res => {
+            localStorage.setItem('token', res.data.token);
+            props.history.push('/dashboard');
             console.log("success", res);
             resetForm();
         })
