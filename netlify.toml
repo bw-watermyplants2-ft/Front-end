@@ -1,7 +1,7 @@
 [build]
 base = 'waterplants-app/'
 publish = '/build/'
-command = 'npm run-script build'
+command = 'yarn build'
 
 [[redirects]]
 from = '/*'

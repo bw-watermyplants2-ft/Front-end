@@ -23,7 +23,7 @@ function App() {
       <Route path='/addplant/' component={AddPlantForm}/>
       <Route path='/deleteplant/' component={DeletePlantForm}/>
       <Route path='/editplant/' component={EditPlantForm}/>
-      <Route path='/myplants/' component={MyPlants}/>
+      <Route path='/myplants/' component={MyPlants} />
       <Route path='/updatephonepass/' component={UpdatePhonePassForm}/>
     </div>
   );
